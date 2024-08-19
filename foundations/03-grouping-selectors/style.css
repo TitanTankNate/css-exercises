@@ -1,0 +1,14 @@
+.primary-button-class {
+    background-color: black;
+    color: white;
+}
+
+.secondary-button-class {
+    background-color: yellow;
+}
+
+.primary-button-class,
+.secondary-button-class {
+    font-size: 28px;
+    font-size: "Helvetica","Times New Roman",sans-serif;
+}
