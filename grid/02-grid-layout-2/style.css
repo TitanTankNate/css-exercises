@@ -4,7 +4,25 @@ html {
   margin: 0;
 }
 
+:root {
+  /* Grid variables */
+  --default-grid-width: 1fr;
+  --default-grid-height: 1fr;
+  --content-grid-width: 3fr;
+  --content-grid-height: 5fr;
+}
+
 .container {
+  /* Display declarations */
+  display: grid;
+  max-width: 90vw;
+  max-height: 90vh;
+  
+  /* Grid declarations */
+  grid-template-columns: var(--default-grid-width) var(--content-grid-width);
+  grid-template-rows: repeat(2, var(--default-grid-height)) var(--content-grid-height) var(--default-grid-height);
+  gap: 15px;
+
   text-align: center;
   height: 100%;
   padding: 16px;
