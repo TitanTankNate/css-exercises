@@ -4,7 +4,21 @@ html {
   margin: 0;
 }
 
+:root {
+  --grid-default-width: 200px;
+  --grid-default-height: 100px;
+  --content-width-start: 2;
+  --content-width-end: -1;
+  --content-height-start: 2;
+  --content-height-end: -2;
+}
+
 .container {
+  /* Display declarations */
+  display: grid;
+  grid-template:  var(--grid-default-height) var(--grid-default-height) calc(5 * var(--grid-default-height)) var(--grid-default-height) / 
+                  var(--grid-default-width) calc(3 * var(--grid-default-width));
+  gap: 15px;
   text-align: center;
   height: 100%;
   padding: 16px;
@@ -21,22 +35,33 @@ html {
 }
 
 .header {
+  grid-column: 1 / var(--content-width-end);
+  grid-row: 1;
   background-color: #006157;
 }
 
 .sidebar {
+  grid-column: 1 / var(--content-width-start);
+  grid-row: var(--content-height-start) / var(--content-height-end);
   background-color: #005B94;
 }
 
 .nav {
+  grid-column: var(--content-width-start) / var(--content-width-end);
+  grid-row: var(--content-height-start) / calc(var(--content-height-start) + 1);
   background-color: #642cde;
 }
 
 .article {
+  grid-column: var(--content-width-start) / var(--content-width-end);
+  grid-row: var(--content-height-start) / var(--content-height-end);
   background-color: #7E1DC3;
+  overflow: scroll;
 }
 
 .footer {
+  grid-column: 1 / var(--content-width-end);
+  grid-row: var(--content-height-end) / -1;
   background-color: #393f4d;
 }
 
